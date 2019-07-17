@@ -11,10 +11,10 @@
   
 .repos {
 @extend %textColors;
+flex-grow: 1;
 display: grid;
 grid-template-columns: repeat(1, auto);
 padding: 2%;
-height: -webkit-fill-available;
 background: $WW510;
 border-radius: 5px;
 @media only screen and (min-width: 550px) {
