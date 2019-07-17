@@ -1,5 +1,6 @@
 import fetch from 'node-fetch'
 import styles from '../styles/repos.scss'
+import GitHubButton from 'react-github-btn'
 
 function Repos(data) {
   if (data.message) return data.message
@@ -16,8 +17,9 @@ function Repos(data) {
             <div id='properties' className={styles.properties}>
               <span>{repo.description}</span>
               <span>{repo.language}</span>
-              <span>{repo.watchers} Watchers</span>
-              <span>{repo.forks} Forks</span>
+              <GitHubButton href={`https://github.com/ww-tech/${repo.name}/subscription`} data-icon="octicon-eye" data-show-count="true" aria-label={`Watch ww-tech/${repo.name} on GitHub`}>Watch</GitHubButton>
+              <GitHubButton href={`https://github.com/ww-tech/${repo.name}/fork`} data-icon="octicon-repo-forked" data-show-count="true" aria-label={`Fork ww-tech/${repo.name} on GitHub`}>Fork</GitHubButton>
+              <GitHubButton href={`https://github.com/ww-tech/${repo.name}`} data-icon="octicon-star" data-show-count="true" aria-label={`Star ww-tech/${repo.name} on GitHub`}>Star</GitHubButton>
               <a href={repo.html_url}>{repo.html_url}</a>
             </div>
           </div>
