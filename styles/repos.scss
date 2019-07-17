@@ -1,0 +1,64 @@
+@import "colors";
+
+.title {
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    font-size: 3em;
+    color: white;
+    background: $WW010;
+}
+  
+.repos {
+@extend %textColors;
+display: grid;
+grid-template-columns: repeat(1, auto);
+padding: 2%;
+height: -webkit-fill-available;
+background: $WW510;
+border-radius: 5px;
+@media only screen and (min-width: 550px) {
+    grid-template-columns: repeat(2, auto);
+}
+@media only screen and (min-width: 1080px) {
+    grid-template-columns: repeat(3, auto);
+}
+}
+
+.repo {
+max-width: 400px;
+display: flex;
+flex-direction: column;
+margin: 5%;
+padding: 3%;
+border-radius: 5px;
+box-shadow: 0 5px 10px -2px rgba(116,128,143,0.2);
+background: white;
+}
+
+.name {
+font-size: 2em;
+}
+
+.properties {
+display: flex;
+flex-direction: column;
+font-size: 1em;
+}
+
+body {
+  font-family: 'Roboto';
+  margin: 0;
+}
+
+
+$textColor : $WW110;
+%textColors {
+  color: $textColor;
+  a:visited, a:link {
+    color: $textColor;
+  }
+  a:hover {
+    color: $WW530;
+  }
+}

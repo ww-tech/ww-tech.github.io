@@ -1,0 +1,33 @@
+@import "../../styles/colors.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: $WW500;
+  width: 100%;
+  @media screen and (min-width: 610px) {
+    flex-direction: row;
+  }
+}
+
+.navbar {
+  min-width: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a:visited{
+    color: $WW010;
+  }
+}
+
+.navitem {
+  padding-right: 3%;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.logo {
+  width: 250px;
+}
