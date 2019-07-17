@@ -38,12 +38,17 @@ background: white;
 
 .name {
 font-size: 2em;
+color: black;
 }
 
 .properties {
 display: flex;
 flex-direction: column;
 font-size: 1em;
+}
+
+.property {
+  padding: 1%;
 }
 
 body {
