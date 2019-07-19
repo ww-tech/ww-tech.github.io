@@ -1,0 +1,25 @@
+@import "colors";
+
+
+.members {
+    background: lightcoral;
+}
+
+.member {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: lightcyan;
+    margin: 1em;
+}
+
+.avatar {
+    width: 100px;
+    border-radius: 50px;
+    margin-right: 20px;
+}
+
+body {
+    font-family: 'Roboto';
+    margin: 0;
+  }

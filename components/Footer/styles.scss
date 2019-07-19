@@ -2,8 +2,21 @@
 
 
 .footer {
-    // background: $WW010;
-    border-top: 2px solid $WW540;
-    color: $WW550;
-    font-size: 2em;
+    font-size: 16px;
+    padding: 50px 0;
+    margin: auto 95px;
+    a:visited, a:link {
+        color: $WW110;
+      }
+      a:hover {
+        color: $WW100;
+      }
+}
+
+.footer_link {
+    margin-right: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px $WW110 solid;
 }

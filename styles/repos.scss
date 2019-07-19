@@ -10,19 +10,19 @@
 }
   
 .repos {
-@extend %textColors;
-flex-grow: 1;
-display: grid;
-grid-template-columns: repeat(1, auto);
-padding: 2%;
-background: $WW510;
-border-radius: 5px;
-@media only screen and (min-width: 550px) {
-    grid-template-columns: repeat(2, auto);
-}
-@media only screen and (min-width: 1080px) {
-    grid-template-columns: repeat(3, auto);
-}
+  @extend %textColors;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  padding: 2%;
+  background: $WW510;
+  border-bottom: 2px solid $WW540;
+  @media only screen and (min-width: 550px) {
+      grid-template-columns: repeat(2, auto);
+  }
+  @media only screen and (min-width: 1080px) {
+      grid-template-columns: repeat(3, auto);
+  }
 }
 
 .repo {
@@ -39,16 +39,34 @@ background: white;
 .name {
 font-size: 2em;
 color: black;
+padding-left: 0.5em;
 }
 
-.properties {
-display: flex;
-flex-direction: column;
-font-size: 1em;
+.name_link {
+  text-decoration: none;
+}
+
+.middle {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1em;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .property {
-  padding: 1%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.description {
+  max-width: 240px;
 }
 
 body {
