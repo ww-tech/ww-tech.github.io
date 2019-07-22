@@ -1,4 +1,5 @@
 @import "colors";
+@import "shared";
 
 .about {
   @extend %textColors;
@@ -14,13 +15,6 @@ body {
   font-family: 'Roboto';
   margin: 0;
 }
-
-body > div {
-  display: flex;
-  flex-direction: column;
-  height: -webkit-fill-available;
-}
-
 
 $textColor : $WW500;
 %textColors {

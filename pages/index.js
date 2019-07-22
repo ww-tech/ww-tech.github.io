@@ -4,7 +4,7 @@ import styles from '../styles/index.scss'
 
 function Home() {
   return (
-    <div id='about' className={styles.about}>
+    <div id='content' className={styles.about}>
       <h1>We are WW Tech!</h1>
       <p>WW inspires healthy habits for real life, using 
         cutting edge science and technology to meet our community 

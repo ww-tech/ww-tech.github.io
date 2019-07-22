@@ -1,16 +1,12 @@
 import fetch from 'node-fetch'
 import styles from '../styles/people.scss';
 
-const mockData = {}
-for (let i = 0; i < 10; i++) {
-  mockData[`${i}`] = {login: 'pinalbhatt', avatar_url: 'https://avatars0.githubusercontent.com/u/6505848?v=4', html_url: 'https://github.com/pinalbhatt'}
-}
-
 function People(data) {
   const members = Object.values(data)
 
-  return (
-    <div id='members' className={styles.members}>
+  return (<>
+    <div id='title' className={styles.title}>Our Team</div>
+    <div id='content' className={styles.bg}><div id='members' className={styles.members}>
       {
         members.map(member => {
           return (
@@ -21,14 +17,13 @@ function People(data) {
           )
         })
       }
-    </div>
-  )
+    </div></div>
+  </>)
 }
 
 People.getInitialProps = async() => {
-  // const data = await fetch('https://api.github.com/orgs/WW-tech/public_members')
-  // .then(response => response.json())
-  const data = mockData
+  const data = await fetch('https://api.github.com/orgs/WW-tech/public_members')
+  .then(response => response.json())
   return data
 }
 

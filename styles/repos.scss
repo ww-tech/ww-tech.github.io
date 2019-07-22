@@ -1,13 +1,5 @@
 @import "colors";
-
-.title {
-    display: flex;
-    justify-content: center;
-    padding: 2%;
-    font-size: 3em;
-    color: white;
-    background: $WW010;
-}
+@import "shared";
   
 .repos {
   @extend %textColors;

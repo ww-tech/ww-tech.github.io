@@ -8,7 +8,7 @@ function Repos(data) {
   repos.sort((repo1, repo2) => repo1.watchers - repo2.watchers )
   return (<>
     <div id='title' className={styles.title}>Our Projects</div>
-    <div id='repos' className={styles.repos}>
+    <div id='content' className={styles.repos}>
     {
       repos.map(repo => {
         return (
