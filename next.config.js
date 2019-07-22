@@ -9,4 +9,6 @@ module.exports = withPlugins([
   [withTranspileModules, {
     transpileModules: ['react-github-btn']
   }]
-])
+], {
+  assetPrefix: process.env.NODE_ENV !== 'dev' ? '/ww-tech' : '',
+})
