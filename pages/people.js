@@ -22,8 +22,8 @@ function People(data) {
 }
 
 People.getInitialProps = async() => {
-  const data = await fetch('https://api.github.com/orgs/WW-tech/public_members')
-  .then(response => response.json())
+  const res = await fetch('https://api.github.com/orgs/WW-tech/public_members')
+  const data = await res.json()
   return data
 }
 
