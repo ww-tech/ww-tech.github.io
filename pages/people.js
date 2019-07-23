@@ -1,30 +1,46 @@
-import fetch from 'node-fetch'
-import styles from '../styles/people.scss';
+import fetch from "node-fetch";
+import styles from "../styles/people.scss";
 
-function People(data) {
-  const members = Object.values(data)
-
-  return (<>
-    <div id='title' className={styles.title}>Our Team</div>
-    <div id='content' className={styles.bg}><div id='members' className={styles.members}>
-      {
-        members.map(member => {
-          return (
-            <div id='member' className={styles.member} key={member.id}>
-              <img src={member.avatar_url} alt='avatar' className={styles.avatar}/>
-              <span>{member.login}</span>
-            </div>
-          )
-        })
-      }
-    </div></div>
-  </>)
+function People({ members }) {
+  return (
+    <>
+      <div id="title" className={styles.title}>
+        Our Team
+      </div>
+      <div id="content" className={styles.bg}>
+        <div id="members" className={styles.members}>
+          {members.map(({ id, html_url, avatar_url, name }) => {
+            return (
+              <div id="member" className={styles.member} key={id}>
+                <a href={html_url}>
+                  <img
+                    src={avatar_url}
+                    alt="avatar"
+                    className={styles.avatar}
+                  />
+                </a>
+                <span>{name}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
 }
 
-People.getInitialProps = async() => {
-  const res = await fetch('https://api.github.com/orgs/WW-tech/public_members')
-  const data = await res.json()
-  return data
-}
+People.getInitialProps = async () => {
+  const res = await fetch("https://api.github.com/orgs/WW-tech/public_members");
+  let members = await res.json();
+  members = await Promise.all(
+    members.map(async ({ id, html_url, avatar_url, url }) => ({
+      id,
+      html_url,
+      avatar_url,
+      name: (await (await fetch(url)).json()).name
+    }))
+  );
+  return { members };
+};
 
-export default People
+export default People;
