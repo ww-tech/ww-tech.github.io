@@ -7,8 +7,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export && touch out/.nojekyll",
-    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add -f out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin master"
+    "export": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll",
+    "deploy": "npm run export && git add -f out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin master"
   },
   "repository": {
     "type": "git",

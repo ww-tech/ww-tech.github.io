@@ -1,0 +1,20 @@
+dist: trusty
+sudo: required
+language: node_js
+node_js:
+  - "12.7.0"
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+branches:
+  except:
+    - master
+install:
+  - npm ci
+  - npm run build
+deploy:
+  - provider: script
+    script: bash deploy.sh
+    on:
+      branch: develop
