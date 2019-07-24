@@ -18,7 +18,7 @@ push_commit() {
 }
 
 setup_git
-
+npm run export
 commit_build_files
 
 if [ $? -eq 0 ]; then
