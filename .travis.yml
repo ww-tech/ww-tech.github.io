@@ -12,9 +12,10 @@ branches:
     - master
 install:
   - npm ci
-  - npm run build
+  - npm run export
 deploy:
   - provider: script
+    skip_cleanup: true
     script: bash deploy.sh
     on:
       branch: develop
