@@ -14,7 +14,7 @@ commit_build_files() {
 push_commit() {
   git remote rm origin
   git remote add origin https://${GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git > /dev/null 2>&1
-  git subtree push --prefix out origin master --quiet
+  git subtree push --prefix out origin master
 }
 
 setup_git
