@@ -1,7 +1,9 @@
 import fetch from "node-fetch";
 import styles from "../styles/people.scss";
 
-function People({ members }) {
+function People({ members, error}) {
+  if (error)
+    return <div>{error}</div>
   return (
     <>
       <div id="title" className={styles.title}>
@@ -32,6 +34,7 @@ function People({ members }) {
 People.getInitialProps = async () => {
   const res = await fetch("https://api.github.com/orgs/WW-tech/public_members");
   let members = await res.json();
+  if (members.message) return {members: null, error: members.message}
   members = await Promise.all(
     members.map(async ({ id, html_url, avatar_url, url }) => ({
       id,
@@ -40,7 +43,7 @@ People.getInitialProps = async () => {
       name: (await (await fetch(url)).json()).name
     }))
   );
-  return { members };
+  return { members, error: null };
 };
 
 export default People;

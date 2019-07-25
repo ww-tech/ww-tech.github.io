@@ -2,6 +2,7 @@
 
 .nav {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   background: $WW500;
   width: 100%;
@@ -11,9 +12,8 @@
 }
 
 .navbar {
-  min-width: 350px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   a:visited{
     color: $WW010;
@@ -21,11 +21,15 @@
 }
 
 .navitem {
-  padding-right: 3%;
-  font-size: 1.5em;
+  padding: 0.3rem 0.5rem;
+  font-size: 1.3em;
   text-decoration: none;
+  @media screen and (min-width: 350px) {
+    font-size: 1.5em;
+  }
 }
 
 .logo {
-  width: 250px;
+  width: 50vw;
+  max-width: 250px;
 }
