@@ -1,0 +1,79 @@
+@import "../../styles/colors.scss";
+
+$bigtext : 45px;
+
+.projects {
+    flex-grow: 1;
+    background: $WW510;
+    .projects_title {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      font-size: $bigtext;
+      margin-top: 2rem;
+      color: $WW010;
+    }
+    .repos {
+      @extend %textColors;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+			padding: 0% 2% 2% 2%;
+      @media only screen and (min-width: 550px) {
+				grid-template-columns: repeat(2, auto);
+      }
+      @media only screen and (min-width: 1080px) {
+				grid-template-columns: repeat(3, auto);
+      }
+      .repo {
+			display: flex;
+			flex-direction: column;
+			background: $WW500;
+			max-width: 400px;
+      margin: 5%;
+      padding: 3%;
+      border-radius: 5px;
+      box-shadow: 0 5px 10px -2px rgba(116,128,143,0.2);
+			.name_link {
+				text-decoration: none;
+				.name {
+					font-size: 2em;
+					color: black;
+					padding-left: 0.5em;
+				}
+				}
+			.middle {
+				flex-grow: 1;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				font-size: 1em;
+			}
+			.bottom {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			.property {
+				padding-top: 1em;
+				padding-bottom: 1em;
+			}
+			.description {
+				max-width: 240px;
+			}
+    }
+  }
+}
+
+
+
+$textColor : $WW110;
+%textColors {
+  color: $textColor;
+  a:visited, a:link {
+    color: $textColor;
+  }
+  a:hover {
+    color: $WW530;
+  }
+}
