@@ -4,13 +4,17 @@
 .footer {
     font-size: 16px;
     padding: 50px 0;
-    margin: 0px 95px;
+    margin: 0px 10vw;
     a:visited, a:link {
-        color: $WW110;
-      }
-      a:hover {
-        color: $WW100;
-      }
+      color: $WW110;
+    }
+    a:hover {
+      color: $WW100;
+    }
+    @media screen and (min-width: 950px) {
+      margin: 0px 95px;
+    }
+    background: white;
 }
 
 .footer_link {
