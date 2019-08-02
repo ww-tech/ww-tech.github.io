@@ -87,41 +87,10 @@ function Navbar() {
     className: _styles_scss__WEBPACK_IMPORTED_MODULE_1___default.a.logo,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-    className: _styles_scss__WEBPACK_IMPORTED_MODULE_1___default.a.navbar,
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 7
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "/",
-    className: _styles_scss__WEBPACK_IMPORTED_MODULE_1___default.a.navitem,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: this
-  }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "repos",
-    className: _styles_scss__WEBPACK_IMPORTED_MODULE_1___default.a.navitem,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: this
-  }, "Our Projects"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "people",
-    className: _styles_scss__WEBPACK_IMPORTED_MODULE_1___default.a.navitem,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: this
-  }, "Our Team")));
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Navbar);
