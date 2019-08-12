@@ -13,6 +13,7 @@ commit_build_files() {
 }
 
 push_commit() {
+  git push origin :master
   git subtree push --prefix out gh-pages master
 }
 
